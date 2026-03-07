@@ -1,13 +1,12 @@
-package br.com.fiapride.main;
+package main;
 
-import br.com.fiapride.model.Passageiro;
+import model.Passageiro;
 
 public class SistemaPrincipal {
 
     public static void main(String[] args) {
-        Passageiro passageiro1 = new Passageiro();
-        passageiro1.nome = "Ana Silva";
-        passageiro1.saldo = 50.0;
+        // Criando o objeto usando o construtor (Nome e Saldo inicial)
+        Passageiro passageiro1 = new Passageiro("Ana Silva", 50.0);
 
         System.out.println("======= Sistema FiapRide ========");
 
@@ -23,6 +22,10 @@ public class SistemaPrincipal {
         // Teste de Recarga Negativa (Cenário Inválido)
         passageiro1.carregarSaldo(-10.0);
 
-        System.out.println("Estado Final - Passageiro: " + passageiro1.nome + " | Saldo: R$" + passageiro1.saldo);
+        // Exibindo estado final usando os métodos Getters
+        System.out.println("\n--- Estado Final ---");
+        System.out.println("Passageiro: " + passageiro1.getNome());
+        System.out.println("Saldo: R$" + passageiro1.getSaldo());
+        System.out.println("Categoria: " + passageiro1.getCategoriaFidelidade());
     }
 }
